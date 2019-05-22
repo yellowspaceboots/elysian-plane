@@ -1,0 +1,4 @@
+[build]
+base = "elysian-plane-web/"
+publish = "elysian-plane-web/build/"
+command = "yarn build"
