@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import bg from './bg.jpg'
+import Typography from '@material-ui/core/Typography'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hi Chris!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: 'flex',
+        position: 'relative',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
+    >
+      <div
+        style={{
+          position: 'fixed',
+          zIndex: -1,
+          top: 0,
+          left: 0,
+          backgroundColor: 'black',
+          height: '100vh',
+          width: '100%',
+          backgroundImage: `url(${bg})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
+        }}
+      />
+      <Typography variant='h1' gutterBottom style={{ color: 'white', marginTop: 75, fontWeight: 900 }}>
+        THE ELYSIAN PLANE
+      </Typography>
+      <Typography variant='h5' gutterBottom style={{ color: 'white' }}>
+        Time for gaming to get with this century
+      </Typography>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
