@@ -1,18 +1,19 @@
 import React from 'react'
-import './App.css'
 import bg from './bg.jpg'
-import Typography from '@material-ui/core/Typography'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import logo from './tep.svg'
+import Home from './Home'
+import Mission from './Mission'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
+import Link from '@material-ui/core/Link'
 
 const App = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        position: 'relative',
-        flexDirection: 'column',
-        alignItems: 'center'
-      }}
-    >
+    <Router>
+      <CssBaseline />
       <div
         style={{
           position: 'fixed',
@@ -28,13 +29,36 @@ const App = () => {
           backgroundPosition: 'center'
         }}
       />
-      <Typography variant='h1' gutterBottom style={{ color: 'white', marginTop: 75, fontWeight: 900 }}>
-        THE ELYSIAN PLANE
-      </Typography>
-      <Typography variant='h5' gutterBottom style={{ color: 'white' }}>
-        Time for gaming to get with this century
-      </Typography>
-    </div>
+      <AppBar position='fixed' style={{ backgroundColor: 'black' }}>
+        <Toolbar style={{ height: 100 }}>
+          <div style={{ display: 'flex', height: '80%', flexGrow: 1 }}>
+            <img src={logo} style={{ height: '100%', width: 'auto' }} alt='Logo' />
+          </div>
+          <Link
+            smooth
+            component={HashLink}
+            color='inherit'
+            style={{ padding: 15 }}
+            variant='button'
+            to={`#Mission`}
+          >
+            Our Mission
+          </Link>
+          <Link
+            smooth
+            component={HashLink}
+            color='inherit'
+            style={{ padding: 15 }}
+            variant='button'
+            to={`#Home`}
+          >
+            Login
+          </Link>
+        </Toolbar>
+      </AppBar>
+      <Home />
+      <Mission />
+    </Router>
   )
 }
 
